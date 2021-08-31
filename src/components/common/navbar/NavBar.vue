@@ -16,7 +16,9 @@ export default {};
   line-height: 44px;
   height: 44px;
   text-align: center;
-  box-shadow: 0 1px 1px rgb(235, 232, 232);
+  /* box-shadow: 0 1px 1px rgb(235, 232, 232); */
+  
+  
 }
 .left,
 .right {
