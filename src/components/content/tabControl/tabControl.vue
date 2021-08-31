@@ -4,6 +4,7 @@
       v-for="(item, index) in titles"
       :key="index"
       class="tab-control-item"
+      
       :class="{ active: index === currentIndex }"
       @click="activeIndex(index)"
     >
@@ -30,6 +31,7 @@ export default {
   methods:{
       activeIndex(index){
           this.currentIndex = index
+          this.$emit('tabClick',index)
       }
   }
 };
@@ -43,6 +45,7 @@ export default {
   height: 40px;
   line-height: 40px;
   background-color: #fff;
+  z-index: 10;
 }
 
 .tab-control-item {
