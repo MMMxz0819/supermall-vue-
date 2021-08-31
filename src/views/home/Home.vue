@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div id="home">
     <nav-bar class="home-nav"><div slot="center">购物街</div></nav-bar>
     <home-swiper :banners = 'banners'></home-swiper>
@@ -42,4 +43,17 @@ export default {
   background-color: var(--color-tint);
   color: white;
 }
+=======
+  <h2>首页</h2>
+</template>
+
+<script>
+  export default {
+    name: "Home"
+  }
+</script>
+
+<style scoped>
+
+>>>>>>> 33ebcbd3eba79bc59e8fb36eef0eac390a2c3930
 </style>
