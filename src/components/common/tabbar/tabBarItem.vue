@@ -12,11 +12,8 @@ export default {
     path: String,
     activeColor: {
       type: String,
-<<<<<<< HEAD
+
       default: "var(--color-tint)",
-=======
-      default: "red",
->>>>>>> 33ebcbd3eba79bc59e8fb36eef0eac390a2c3930
     },
   },
   methods: {
