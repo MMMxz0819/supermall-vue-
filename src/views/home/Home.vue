@@ -1,12 +1,15 @@
 <template>
   <div id="home">
     <nav-bar class="home-nav"><div slot="center">购物街</div></nav-bar>
-<tab-control
-        :titles="['流行', '新款', '精选']"
-        ref="tabControlfixed"
-        @tabClick="tabClick"
-        :class="[istabControlfix?'tabFixed':'unfixed']"
-      />
+
+    <!-- 最初隐藏，根据高度判断吸顶位置，到达位置后显示 -->
+    <tab-control
+      :titles="['流行', '新款', '精选']"
+      ref="tabControlfixed"
+      @tabClick="tabClick"
+      v-show="istabControlfix"
+      class="tabFixed"
+    />
     <!-- 页面滚动 -->
     <scroll
       class="content"
@@ -16,7 +19,7 @@
       :pull-up-load="true"
       @pullingUp="loadmore"
     >
-      <!--  -->
+      <!-- :class="[istabControlfix?'tabFixed':'unfixed']" -->
       <home-swiper :banners="banners" @swiperImageLoad="imgLoad"></home-swiper>
       <home-recommend-view :recommends="recommends" />
       <feature />
@@ -24,7 +27,6 @@
         :titles="['流行', '新款', '精选']"
         ref="tabControl"
         @tabClick="tabClick"
-        
       />
       <goodslist :goods="goods[currentType]" />
     </scroll>
@@ -75,10 +77,8 @@ export default {
       },
       currentType: "pop",
       isShowBackTop: false,
-      tabCoffsetTop:0,
-      istabControlfix:false,
-   
-
+      tabCoffsetTop: 0,
+      istabControlfix: false,
     };
   },
   created() {
@@ -140,7 +140,7 @@ export default {
       this.isShowBackTop = -position.y > 1000;
 
       //是否吸顶
-      this.istabControlfix = -position.y >this.tabCoffsetTop
+      this.istabControlfix = -position.y > this.tabCoffsetTop;
     },
 
     //下拉加载更多
@@ -150,8 +150,7 @@ export default {
 
     //轮播图加载完成后获取tabControl的高度
     imgLoad() {
-      this.tabCoffsetTop = this.$refs.tabControl.$el.offsetTop
-
+      this.tabCoffsetTop = this.$refs.tabControl.$el.offsetTop;
     },
 
     //
@@ -183,17 +182,17 @@ export default {
   overflow: hidden;
 }
 
-.tabFixed{
+.tabFixed {
   position: fixed;
   top: 44px;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 11;
 }
 
-.unfixed{
+/* .unfixed{
   display: none;
-}
+} */
 </style>
 
 
