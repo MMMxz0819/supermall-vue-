@@ -28,7 +28,7 @@
         ref="tabControl"
         @tabClick="tabClick"
       />
-      <goodslist :goods="goods[currentType]" />
+      <goodslist :goods="goods[currentType].list" />
     </scroll>
 
     <!-- 返回顶端（组件点击需要增加native修饰符） -->
@@ -79,8 +79,11 @@ export default {
       isShowBackTop: false,
       tabCoffsetTop: 0,
       istabControlfix: false,
+      SaveY: 0,
     };
   },
+
+  //实例创建完成
   created() {
     //获取返回数据
     this.getHomeMultidata();
@@ -88,6 +91,18 @@ export default {
     this.getHomeGoods("pop"),
       this.getHomeGoods("new"),
       this.getHomeGoods("sell");
+  },
+
+  //激活状态
+  activated() {
+    this.$refs.scroll.scrollto(0, this.SaveY, 0);
+    this.$refs.scroll.refresh()
+  },
+
+  //非激活状态
+  deactivated() {
+    this.SaveY = this.$refs.scroll.getScrollY();
+    
   },
 
   methods: {
@@ -124,6 +139,8 @@ export default {
           this.currentType = "sell";
           break;
       }
+      this.$refs.tabControlfixed.currentIndex = index;
+      this.$refs.tabControl.currentIndex = index;
     },
     // this.$refs.scroll.scrollto是scroll是组件内的方法
     backClick() {

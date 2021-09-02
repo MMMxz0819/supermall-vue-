@@ -13,7 +13,9 @@
     "axios": "^0.21.1",
     "better-scroll": "^2.4.2",
     "core-js": "^3.6.5",
+    "swiper": "^7.0.2",
     "vue": "^2.6.11",
+    "vue-awesome-swiper": "^2.6.7",
     "vue-router": "^3.5.2"
   },
   "devDependencies": {

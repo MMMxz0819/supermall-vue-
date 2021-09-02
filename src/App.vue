@@ -1,12 +1,14 @@
 <template>
   <div id="app">
-    <router-view></router-view>
-    <main-tab-bar class="main-tab-bar"/>
+    <keep-alive exclude="detail">
+      <router-view></router-view>
+    </keep-alive>
+
+    <main-tab-bar class="main-tab-bar" />
   </div>
 </template>
 
 <script>
-
 import MainTabBar from "components/content/mainTabbar/MainTabBar.vue";
 
 export default {
@@ -21,8 +23,7 @@ export default {
 <style>
 @import url("assets/css/base.css");
 
-.main-tab-bar{
+.main-tab-bar {
   z-index: 11;
-
 }
 </style>

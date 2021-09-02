@@ -1,8 +1,8 @@
 <template>
   <swiper>
-    <swiper-item v-for="(item,index) in banners" :key="index">
+    <swiper-item v-for="(item, index) in banners" :key="index">
       <a :href="item.link">
-        <img :src="item.image" alt=""  @load="imgLoad" />
+        <img :src="item.image" alt="" @load="imgLoad" />
       </a>
     </swiper-item>
   </swiper>
@@ -15,27 +15,26 @@ export default {
   props: {
     banners: {
       type: Array,
-   
     },
   },
-  data(){
-    return{
-      isLoad:false
-    }
+  data() {
+    return {
+      isLoad: false,
+    };
   },
   components: {
     SwiperItem,
     Swiper,
   },
-  methods:{
+  methods: {
     //监听图片加载完成
-    imgLoad(){
-      if(!this.isLoad){
-        this.$emit('swiperImageLoad')
-        this.isLoad = true
+    imgLoad() {
+      if (!this.isLoad) {
+        this.$emit("swiperImageLoad");
+        this.isLoad = true;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

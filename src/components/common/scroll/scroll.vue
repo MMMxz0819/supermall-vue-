@@ -21,14 +21,15 @@ export default {
       type: Number,
       default: 0,
     },
-    pullUpLoad:{
-      type:Boolean,
-      default:false
-    }
+    pullUpLoad: {
+      type: Boolean,
+      default: true,
+    },
   },
   data() {
     return {
       scroll: null,
+      positionY: 0,
     };
   },
 
@@ -47,21 +48,27 @@ export default {
 
     //提交位置
     this.scroll.on("scroll", (position) => {
-      // console.log(position);
+      this.positionY = position.y;
       this.$emit("scrollPosition", position);
     });
 
-    this.scroll.on('pullingUp',()=>{
-      this.$emit('pullingUp')
-    })
+    this.scroll.on("pullingUp", () => {
+      this.$emit("pullingUp");
+    });
   },
   methods: {
     scrollto(x, y, time = 300) {
       this.scroll.scrollTo(x, y, time);
     },
-    pullUpFinish(){
-      this.scroll.finishPullUp()
-    }
+    pullUpFinish() {
+      this.scroll.finishPullUp();
+    },
+    refresh() {
+      this.scroll && this.scroll.refresh();
+    },
+    getScrollY() {
+      return this.scroll ? this.scroll.y : 0;
+    },
   },
 };
 </script>
