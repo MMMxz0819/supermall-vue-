@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="profile">
     
   </div>
 </template>
@@ -16,4 +16,8 @@ export default {
 </script>
 
 <style scoped>
+.profile{
+  height: 30px;
+   background: url('../../assets/img/detail/detail_bottom.png');
+}
 </style>

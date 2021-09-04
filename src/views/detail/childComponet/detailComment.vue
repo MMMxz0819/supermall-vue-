@@ -5,7 +5,7 @@
       <span class="right">更多 ></span>
     </div>
     <!-- 用户信息 -->
-    <div class="user" v-if="Object.keys(commentInfo).length !==0">
+    <div class="user" v-if="Object.keys(commentInfo).length !== 0">
       <img :src="commentInfo.user.avatar" alt="" />
       <span>{{ commentInfo.user.uname }}</span>
     </div>
@@ -15,8 +15,15 @@
       <div class="content">
         {{ commentInfo.content }}
       </div>
+
       <div class="goods-style">
-        {{ commentInfo.style }}
+        <span>{{ commentInfo.created | showDate }}</span>
+        <span> {{ commentInfo.style }}</span>
+      </div>
+      <div class="commentpic" v-if="commentInfo.images != undefined">
+        <span v-for="(item, index) in commentInfo.images" :key="index">
+          <img :src="item" alt="" />
+        </span>
       </div>
     </div>
 
@@ -28,6 +35,8 @@
 </template>
 
 <script>
+import { formatDate } from "@/common/utils.js";
+
 export default {
   props: {
     commentInfo: {
@@ -35,6 +44,12 @@ export default {
       default() {
         return {};
       },
+    },
+  },
+  filters: {
+    showDate(value) {
+      const date = new Date(value * 1000);
+      return formatDate(date, "yyyy-MM-dd");
     },
   },
 };
@@ -83,5 +98,15 @@ export default {
   border-bottom: solid 1px var(--color-high-text);
   padding: 12px;
   font-size: 14px;
+}
+.commentpic {
+  padding-top: 10px;
+}
+.commentpic span {
+  padding-right: 5px;
+}
+.commentpic img {
+  height: 50px;
+  width: 50px;
 }
 </style>

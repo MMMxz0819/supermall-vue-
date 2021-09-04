@@ -44,27 +44,27 @@ import Feature from "./ChildrenComponent/Feature.vue";
 import Goodslist from "components/content/goods/Goodslist.vue";
 import tabControl from "components/content/tabControl/tabControl.vue";
 import NavBar from "components/common/navbar/NavBar";
-import backTop from "components/content/backTop/backTop.vue";
 
 import { debounce } from "common/utils.js";
 
 import Scroll from "components/common/scroll/scroll.vue";
 
 import { getHomeMultidata, getHomeGoods } from "network/home.js";
-
+import { backTopMixin } from "@/common/mixin.js";
 export default {
   name: "Home",
   components: {
     NavBar,
     Goodslist,
     tabControl,
-    backTop,
+
     HomeSwiper,
     HomeRecommendView,
     Feature,
 
     Scroll,
   },
+  mixins: [backTopMixin],
   data() {
     return {
       banners: [],
@@ -76,7 +76,7 @@ export default {
         sell: { page: 0, list: [] },
       },
       currentType: "pop",
-      isShowBackTop: false,
+
       tabCoffsetTop: 0,
       istabControlfix: false,
       SaveY: 0,
@@ -96,13 +96,12 @@ export default {
   //激活状态
   activated() {
     this.$refs.scroll.scrollto(0, this.SaveY, 0);
-    this.$refs.scroll.refresh()
+    // this.$refs.scroll.refresh()
   },
 
   //非激活状态
   deactivated() {
     this.SaveY = this.$refs.scroll.getScrollY();
-    
   },
 
   methods: {
@@ -142,18 +141,9 @@ export default {
       this.$refs.tabControlfixed.currentIndex = index;
       this.$refs.tabControl.currentIndex = index;
     },
-    // this.$refs.scroll.scrollto是scroll是组件内的方法
-    backClick() {
-      this.$refs.scroll.scrollto(0, 0);
-    },
 
     //backTop的显示与隐藏与tabControl是否吸顶
     backTopdisplay(position) {
-      // if (-position.y > 1000) {
-      //   this.isShowBackTop = true;
-      // } else {
-      //   this.isShowBackTop = false;
-      // }
       this.isShowBackTop = -position.y > 1000;
 
       //是否吸顶
@@ -206,10 +196,6 @@ export default {
   right: 0;
   z-index: 11;
 }
-
-/* .unfixed{
-  display: none;
-} */
 </style>
 
 

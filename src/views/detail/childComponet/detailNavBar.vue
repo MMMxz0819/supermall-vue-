@@ -39,6 +39,7 @@ export default {
   methods: {
     clickItem(index) {
       this.currentIndex = index;
+      this.$emit('titleClick',index)
     },
     //返回上个页面
     backTo() {
