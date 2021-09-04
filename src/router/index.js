@@ -5,33 +5,40 @@ const home = () => import('views/home/Home.vue')
 const category = () => import('views/category/Category.vue')
 const shopcart = () => import('views/cart/Cart.vue')
 const profile = () => import('views/profile/Profile.vue')
-const detail = ()=>import('views/detail/detail.vue')
+const detail = () => import('views/detail/detail.vue')
 
 Vue.use(VueRouter)
 
+const originalPush = VueRouter.prototype.push
+
+VueRouter.prototype.push = function push(location) {
+    return originalPush.call(this, location).catch(err => err)
+}
+
+
 const routes = [
     {
-        path:'',
-        redirect:'/home'
+        path: '',
+        redirect: '/home'
     },
     {
-        path:'/home',
+        path: '/home',
         component: home
     },
     {
-        path:'/category',
+        path: '/category',
         component: category
     },
     {
-        path:'/shopcart',
+        path: '/shopcart',
         component: shopcart
     },
     {
-        path:'/profile',
+        path: '/profile',
         component: profile
     },
     {
-        path:'/detail/:iid',
+        path: '/detail/:iid',
         component: detail
     }
 ]

@@ -4,6 +4,7 @@ export default{
 
     },
     addToCart(state, payload) {
+        payload.check = false
         payload.count = 1
         state.cartLists.push(payload)
     }

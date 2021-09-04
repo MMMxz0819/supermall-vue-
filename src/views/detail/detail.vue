@@ -145,8 +145,8 @@ export default {
       product.title = this.goods.title;
       product.desc = this.goods.desc;
       product.realPrice = this.goods.realPrice;
-      product.img = this.topImages[1]
-      product.iid = this.goods.iid
+      product.img = this.topImages[0]
+      product.iid = this.iid
 
 //上传到vuex
       this.$store.dispatch('addCart',product)

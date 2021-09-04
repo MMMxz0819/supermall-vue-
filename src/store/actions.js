@@ -5,10 +5,11 @@ export default{
 
         if (OldProduct) {//若存在则直接变量+1
             context.commit('addCount', OldProduct)
-
+console.log('+1');
 
         } else { //如果没有就增加计数属性
             context.commit('addToCart', payload)
+            console.log('haha');
         }
     }
 }
