@@ -147,7 +147,7 @@ export default {
       this.isShowBackTop = -position.y > 1000;
 
       //是否吸顶
-      this.istabControlfix = -position.y > this.tabCoffsetTop;
+      this.istabControlfix = -position.y >= this.tabCoffsetTop;
     },
 
     //下拉加载更多
