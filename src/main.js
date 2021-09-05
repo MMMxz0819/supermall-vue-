@@ -3,7 +3,13 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import Toast from 'components/common/toast'
+
+
 Vue.config.productionTip = false
+
+// 安装使用=>Toast.install
+Vue.use(Toast)
 
 new Vue({
   render: h => h(App),

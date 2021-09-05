@@ -1,11 +1,15 @@
 <template>
   <div class="cart-bottom">
     <div class="checkAll">
-      <check-buttom class="check-buttom" />
+      <check-buttom
+        class="check-buttom"
+        :isChecked="selectAll"
+        @click.native="changeAll"
+      />
       <span>全选</span>
     </div>
     <div class="total">合计:￥{{ totalPrice }}</div>
-    <div class="calculate">去计算({{ calclength }})</div>
+    <div class="calculate" @click="warning">去计算({{ calclength }})</div>
   </div>
 </template>
 
@@ -22,6 +26,7 @@ export default {
     checkButtom,
   },
   computed: {
+    //计算总价
     totalPrice() {
       const checkTotal = this.$store.state.cartLists.filter(
         (item) => item.check == true
@@ -37,9 +42,40 @@ export default {
 
       return this.Price.toFixed(2);
     },
+
+    // 计算选中数量
     calclength() {
       return this.$store.state.cartLists.filter((item) => item.check == true)
         .length;
+    },
+
+    // 选中全部按钮显示
+    selectAll() {
+      if (this.$store.state.cartLists.length === 0) {
+        return false;
+      } else {
+        return (
+          this.$store.state.cartLists.find((item) => item.check == !true) ===
+          undefined
+        );
+      }
+    },
+  },
+  methods: {
+    //根据选择状态确定 按全选按钮时 商品的选中状态
+    changeAll() {
+      if (this.selectAll) {
+        this.$store.commit("cancelAll");
+      } else {
+        this.$store.commit("chooseAll");
+      }
+    },
+
+    //当选择零件时提示
+    warning() {
+      if (this.calclength == 0) {
+        this.$toast.show("请选择商品");
+      }
     },
   },
 };

@@ -44,6 +44,7 @@ export default {
       disableMouse: false, //启用鼠标拖动
       disableTouch: false, //启用手指触摸
       observeDOM: true,
+      observeImage: true
     });
 
     //提交位置

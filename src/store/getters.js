@@ -4,5 +4,6 @@ export default{
     },
     cartLists(state){
         return state.cartLists
-    }
+    },
+    
 }

@@ -44,6 +44,7 @@
       v-show="isShowBackTop"
       class="back-top"
     />
+    <toast />
   </div>
 </template>
 
@@ -70,6 +71,9 @@ import scroll from "components/common/scroll/scroll.vue";
 import goodslist from "components/content/goods/Goodslist.vue";
 import { backTopMixin } from "@/common/mixin.js";
 
+import toast from "components/common/toast/toast.vue";
+import Toast from "../../components/common/toast/toast.vue";
+
 export default {
   name: "detail",
   data() {
@@ -89,6 +93,7 @@ export default {
   },
   mixins: [backTopMixin],
   components: {
+    toast,
     detailNavBar,
     detailswiper,
     detailBaseInfo,
@@ -99,6 +104,7 @@ export default {
     detailComment,
     goodslist,
     detailBottomBar,
+    Toast,
   },
   methods: {
     //图片加载完成后回调
@@ -133,7 +139,6 @@ export default {
         ) {
           this.currentIndex = i;
           this.$refs.detailNav.currentIndex = this.currentIndex;
-          console.log(this.currentIndex);
         }
       }
       this.isShowBackTop = -position.y > 1000;
@@ -145,11 +150,18 @@ export default {
       product.title = this.goods.title;
       product.desc = this.goods.desc;
       product.realPrice = this.goods.realPrice;
-      product.img = this.topImages[0]
-      product.iid = this.iid
+      product.img = this.topImages[0];
+      product.iid = this.iid;
 
-//上传到vuex
-      this.$store.dispatch('addCart',product)
+      // this.$store.dispatch("addCart", product).then((res) => {
+      //   console.log(res);
+      // });
+
+      //上传到vuex
+      this.$store.dispatch("addCart", product);
+
+      //直接使用封装的toast插件中的show函数
+      this.$toast.show("成功添加商品至购物车");
     },
   },
 
