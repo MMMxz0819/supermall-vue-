@@ -1,244 +1,69 @@
 <template>
-  <div class="wrapper">
-    <ul class="content">
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-      <li>分类列表</li>
-    </ul>
+  <div class="category">
+    <nav-bar class="nav-bar"><div slot="center">商品分类</div></nav-bar>
+    <category-menu :Menu="menuList" @clickMenu="MenuItem" />
+
+    <current-category :currentCategory = 'currentList'/>
   </div>
 </template>
 
 <script>
-import BScroll from "@better-scroll/core";
-import Pullup from '@better-scroll/pull-up'
+import NavBar from "../../components/common/navbar/NavBar.vue";
+import Scroll from "../../components/common/scroll/scroll.vue";
+import CategoryMenu from "./ChildComponents/CategoryMenu.vue";
 
-BScroll.use(Pullup)
+import { getCategory, getMenuItem } from "@/network/category.js";
+import CurrentCategory from "./ChildComponents/currentCategory.vue";
 
 export default {
-  name: "Category",
   data() {
     return {
-      bs: null,
+      menuList: [],
+      maitKey: 3627,
+      currentList: [],
     };
   },
+  components: { NavBar, Scroll, CategoryMenu, CurrentCategory },
+  name: "Category",
+  created() {
+    // 获取数据
+    this.getCategory();
+    this.getMenuItem(this.maitKey);
+  },
 
-  mounted() {
-    this.bs = new BScroll(".wrapper", {
-      scrollY: true,
-      click: true,
-      probeType:3,
-      pullUpLoad:true
-
-    });
-
-    // this.bs.on('scroll',(position)=>console.log(position));
-  
-  this.bs.on('pullingUp',()=>console.log('上拉'))
+  methods: {
+    // 获取数据
+    getCategory() {
+      getCategory().then((res) => {
+        this.menuList = res.data.category.list;
+      });
+    },
+    //获取当前分类数据
+    getMenuItem(maitKey) {
+      getMenuItem(maitKey).then((res) => {
+        this.currentList = res.data.list;
+        console.log(this.currentList);
+      });
+    },
+    // 传送当前的index
+    MenuItem(index) {
+      this.maitKey = this.menuList[index].maitKey;
+      this.getMenuItem(this.maitKey);
+    },
   },
 };
 </script>
 
 <style scoped>
-.wrapper {
-  height: 150px;
-  background-color: red;
-  overflow: hidden;
+.nav-bar {
+  background-color: var(--color-high-text);
+  color: #fff;
+}
+.content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 44px;
+  bottom: 49px;
 }
 </style>
